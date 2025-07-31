@@ -1,0 +1,47 @@
+.promo
+	&-banner
+		position: relative
+		height: 100svh
+		@include flexbox
+		flex-direction: column
+		justify-content: flex-end
+		padding: 200px 0
+		&__media
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: center
+			max-width: initial
+		.container
+			@include flexbox
+			align-items: flex-start
+			flex-direction: column
+			gap: 40px
+		&__title
+			color: var(--color-white)
+			font-family: 'Lithium'
+			font-size: 96px
+			line-height: 0.9
+		&__btn
+			@include flexbox
+			align-items: center
+			gap: 4px
+			padding: 16px 60px
+			box-shadow: inset 0 0 0 1px var(--color-white)
+			color: var(--color-white)
+			transition: var(--transition-ms)
+			span
+				display: block
+				line-height: var(--line-height)
+			svg
+				display: block
+				fill: var(--color-white)
+				transition: var(--transition-ms)
+			&:hover
+				background: var(--color-white)
+				color: var(--color-black)
+				svg
+					fill: var(--color-black)

@@ -1,5 +1,5 @@
 {% extends 'components/_layout.html' %}
-{% set site_title = 'Каталог' %}
+{% set site_title = 'Каталог пустой' %}
 
 {% block content %}
 
@@ -41,18 +41,9 @@
 				</ul>
 			</div>
 		</div>
-		<div class="catalog-grid">
-			{% include 'components/catalog-item.html' %}
-			{% include 'components/catalog-item.html' %}
-			{% include 'components/catalog-item.html' %}
-			{% include 'components/catalog-item.html' %}
-			{% include 'components/catalog-item.html' %}
-			{% include 'components/catalog-item.html' %}
-			{% include 'components/catalog-item.html' %}
-			{% include 'components/catalog-item.html' %}
-			{% include 'components/catalog-item.html' %}
-			{% include 'components/catalog-item.html' %}
-			{% include 'components/catalog-item.html' %}
+		<div class="catalog-empty">
+			<div class="catalog-empty__title">Таких товаров нет</div>
+			<a href="#" class="catalog-empty__btn">Сбросить фильтры</a>
 		</div>
 	</div>
 </section>

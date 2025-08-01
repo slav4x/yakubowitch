@@ -161,3 +161,26 @@
 					// width: 0px
 					margin-right: auto
 					opacity: 0
+	&-empty
+		@include flexbox
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		gap: 40px
+		padding-top: 200px
+		&__title
+			font-size: 64px
+			line-height: 0.9
+			font-family: 'Lithium'
+			text-align: center
+		&__btn
+			padding: 20px
+			min-width: 280px
+			box-shadow: inset 0 0 0 1px var(--color-black)
+			color: var(--color-black)
+			transition: var(--transition-ms)
+			line-height: var(--line-height)
+			text-align: center
+			&:hover
+				background: var(--color-black)
+				color: var(--color-white)

@@ -1,0 +1,163 @@
+.catalog
+	padding: 60px 0 200px
+	&-title
+		font-size: 64px
+		line-height: 0.9
+		font-family: 'Lithium'
+		margin-bottom: 40px
+		font-weight: 400
+		& + .catalog-grid
+			margin-top: 60px
+	&-grid
+		@include flexbox
+		align-items: flex-start
+		gap: 80px 40px
+		margin-top: 20px
+	&-card
+		width: calc((100% - (40px * 3)) / 4)
+		&__pic
+			width: 100%
+			aspect-ratio: 3 / 4
+			background: #cbc8cf
+			position: relative
+			overflow: hidden
+		&__image
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: center
+			position: absolute
+			top: 0
+			left: 0
+		&__info
+			margin-top: 28px
+		&__title,
+		&__price
+			font-family: 'Lithium'
+			font-size: 32px
+			line-height: 0.9
+		&__price
+			margin-top: 12px
+			@include flexbox
+			align-items: flex-start
+			gap: 8px
+			&::after
+				content: ''
+				display: block
+				width: 15px
+				height: 23px
+				background-image: url("data:image/svg+xml,%3Csvg width='15' height='23' viewBox='0 0 15 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.51069 13.5877C11.8165 13.6545 15 10.9249 15 6.61197C15 2.56637 11.8165 -0.0655834 6.51069 0.00124352H0V0.361081C1.6636 0.366222 3.32719 0.0989136 3.32719 1.8467V13.0736L0 13.089V13.6031H3.32719V15.3303H0V15.8547H3.32719V21.1597C3.32719 22.7378 1.6636 22.5425 0 22.6402V23H8.77119V22.6402C7.17944 22.5425 5.30582 22.7378 5.30582 21.1597V15.8495H9.21334V15.32L5.30582 15.3303V13.598H6.51069V13.5877ZM5.30582 0.561562H6.11828C11.3522 0.561562 13.1209 3.94917 13.1209 6.81245C13.1209 9.9379 11.3522 13.0633 6.11828 13.0633H5.30582V0.561562Z' fill='%23020A0E'/%3E%3C/svg%3E%0A")
+		&__favorite
+			position: absolute
+			z-index: 10
+			top: 20px
+			right: 20px
+			svg
+				display: block
+				path
+					stroke: var(--color-black)
+					fill: transparent
+					transition: var(--transition-ms)
+			&:hover
+				svg
+					path
+						stroke: var(--color-dark-red)
+			&.liked
+				svg
+					path
+						stroke: var(--color-dark-red)
+						fill: var(--color-dark-red)
+		&__badges
+			@include flexbox
+			align-items: flex-start
+			gap: 12px
+			position: absolute
+			top: 23px
+			left: 20px
+			right: 60px
+			li
+				font-size: 14px
+				line-height: 1
+				padding: 4px 8px
+				background: var(--color-dark-red)
+				color: var(--color-white)
+				&.new
+					background: var(--color-white)
+					color: var(--color-blue-gray)
+	&-filter
+		@include flexbox
+		align-items: flex-start
+		gap: 20px 40px
+		&__group
+			@include flexbox
+			align-items: center
+			gap: 8px
+			&-title
+				line-height: var(--line-height)
+		&__list
+			@include flexbox
+			align-items: flex-end
+			gap: 20px
+			li
+				a
+					display: block
+					line-height: var(--line-height)
+					padding-top: 1px
+					border-bottom: 1px solid transparent
+					color: var(--color-blue-gray)
+					transition: var(--transition-ms)
+					&:hover
+						color: var(--color-ice-blue)
+				&.active a
+					border-color: var(--color-black)
+					color: var(--color-black)
+		&__categories
+			margin-right: auto
+		&__search
+			@include flexbox
+			align-items: center
+			position: relative
+			transition: var(--transition-ms)
+			width: 58px
+			&-form
+				width: 0px
+				overflow: hidden
+				position: absolute
+				z-index: 2
+				top: 0
+				right: 0
+				transition: var(--transition-ms)
+				input
+					height: 30px
+					border-bottom: 1px solid var(--color-black)
+					padding-right: 30px
+					width: 370px
+					padding: 0
+					font-weight: 300
+				button
+					width: 28px
+					height: 28px
+					position: absolute
+					top: 1px
+					right: 0
+					background: transparent url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.1147 21C5.26258 21 1.77161 14.7706 1.39758 14.0647L1.10986 13.5L1.39758 12.9441C1.42635 12.8824 4.87895 6 14.1051 6C23.3312 6 26.4481 12.2294 26.8221 12.9353L27.1099 13.5L26.8221 14.0559C26.7934 14.1176 23.3408 21 14.1147 21ZM2.17442 13.5L2.27032 13.6853C2.61558 14.3382 5.85719 20.1176 14.1147 20.1176C22.3721 20.1176 25.9206 13.7559 25.9494 13.6941L26.0453 13.5L25.9494 13.3147C25.6041 12.6618 22.3529 6.88235 14.1051 6.88235C5.85719 6.88235 2.29909 13.2441 2.27032 13.3059L2.17442 13.5ZM14.1051 10.4118C12.2541 10.4118 10.9999 11.7971 10.9999 13.5C10.9999 15.2029 12.2541 16.5882 14.1051 16.5882C15.956 16.5882 16.9999 15.2029 16.9999 13.5C16.9999 11.7971 15.956 10.4118 14.1051 10.4118Z' fill='%23020A0E'/%3E%3C/svg%3E%0A") no-repeat center
+					cursor: pointer
+					border: 0
+			&-text
+				padding: 1px 0
+				line-height: var(--line-height)
+				overflow: hidden
+				height: 30px
+				transition: var(--transition-ms)
+				cursor: pointer
+				width: 58px
+				&:hover
+					color: var(--color-ice-blue)
+			&.show
+				width: 370px
+				.catalog-filter__search-form
+					width: 100%
+				.catalog-filter__search-text
+					// width: 0px
+					margin-right: auto
+					opacity: 0

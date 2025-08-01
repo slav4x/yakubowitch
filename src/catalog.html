@@ -1,0 +1,60 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Главная' %}
+
+{% block content %}
+
+<section class="catalog">
+	<div class="container">
+		<h2 class="catalog-title">Платья</h2>
+		<div class="catalog-filter">
+			<div class="catalog-filter__group catalog-filter__categories">
+				<ul class="catalog-filter__list">
+					<li class="active"><a href="#">Все</a></li>
+					<li><a href="#">Повседневные</a></li>
+					<li><a href="#">Вечерние</a></li>
+					<li><a href="#">Летние</a></li>
+				</ul>
+			</div>
+			<div class="catalog-filter__search">
+				<form action="#" class="catalog-filter__search-form">
+					<input type="text" placeholder="Поиск">
+					<button></button>
+				</form>
+				<div class="catalog-filter__search-text">Поиск</div>
+			</div>
+			<div class="catalog-filter__group">
+				<div class="catalog-filter__group-title">Размер:</div>
+				<ul class="catalog-filter__list">
+					<li><a href="#">XS</a></li>
+					<li><a href="#">S</a></li>
+					<li><a href="#">M</a></li>
+					<li><a href="#">L</a></li>
+					<li><a href="#">XL</a></li>
+				</ul>
+			</div>
+			<div class="catalog-filter__group">
+				<div class="catalog-filter__group-title">Сортировать:</div>
+				<ul class="catalog-filter__list">
+					<li class="active"><a href="#">Новинки</a></li>
+					<li><a href="#">Цена↑</a></li>
+					<li><a href="#">Цена↓</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="catalog-grid">
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+		</div>
+	</div>
+</section>
+
+{% endblock %}

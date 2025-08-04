@@ -98,8 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  const favoriteIcon = document?.querySelector('.item-info__favorite');
-  favoriteIcon.addEventListener('click', (e) => {
+  const favoriteIcon = document.querySelector('.item-info__favorite');
+  favoriteIcon?.addEventListener('click', (e) => {
     favoriteIcon.classList.toggle('liked');
   });
 

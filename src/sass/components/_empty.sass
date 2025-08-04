@@ -44,3 +44,18 @@
 			svg
 				path
 					fill: var(--color-white)
+	&-invert
+		background: var(--color-black)
+		color: var(--color-white)
+		.empty-btn
+			box-shadow: inset 0 0 0 1px var(--color-white)
+			color: var(--color-white)
+			svg
+				path
+					fill: var(--color-white)
+			&:hover
+				background: var(--color-white)
+				color: var(--color-black)
+				svg
+					path
+						fill: var(--color-black)

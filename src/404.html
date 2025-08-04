@@ -1,18 +1,12 @@
 {% extends 'components/_layout.html' %}
-{% set site_title = 'Избранное пусто' %}
+{% set site_title = '404' %}
 
 {% block content %}
 
-<section class="empty">
+<section class="empty empty-invert">
 	<div class="container">
-		<img src="img/svg/empty.svg" alt="" class="empty-image">
-		<h2 class="empty-title">Здесь пока пусто</h2>
-		<p class="empty-text">
-			<span>Чтобы добавлять товары, нажимайте на</span>
-			<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M14 25L1 12L6 3H11L14 5.87L17 3H22L27 12L14 25ZM2.24 11.83L14 23.59L25.76 11.83L21.41 4H17.4L14 7.25L10.6 4H6.59L2.24 11.83Z"/>
-			</svg>
-		</p>
+		<img src="img/svg/empty-invert.svg" alt="" class="empty-image">
+		<h2 class="empty-title">Мы не смогли найти страницу по вашей ссылке</h2>
 		<a href="#" class="empty-btn">
 			<span>В каталог</span>
 			<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">

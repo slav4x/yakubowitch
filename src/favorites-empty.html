@@ -1,0 +1,25 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Избранное пусто' %}
+
+{% block content %}
+
+<section class="empty">
+	<div class="container">
+		<img src="img/svg/empty.svg" alt="" class="empty-image">
+		<h2 class="empty-title">Здесь пока пусто</h2>
+		<p class="empty-text">
+			<span>Чтобы добавлять товары, нажимайте на</span>
+			<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M14 25L1 12L6 3H11L14 5.87L17 3H22L27 12L14 25ZM2.24 11.83L14 23.59L25.76 11.83L21.41 4H17.4L14 7.25L10.6 4H6.59L2.24 11.83Z"/>
+			</svg>
+		</p>
+		<a href="#" class="empty-btn">
+			<span>В каталог</span>
+			<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M10.0963 8.89796C7.28313 8.89796 5 11.1837 5 14C5 16.8163 7.28313 19.102 10.0963 19.102C12.9094 19.102 15.1925 16.8163 15.1925 14C15.1925 11.1837 12.9094 8.89796 10.0963 8.89796ZM10.0963 18.0816C7.84371 18.0816 6.01925 16.2551 6.01925 14C6.01925 11.7449 7.84371 9.91837 10.0963 9.91837C12.3488 9.91837 14.1733 11.7449 14.1733 14C14.1733 16.2551 12.3488 18.0816 10.0963 18.0816ZM23 14L15.6104 25L14.7644 24.4286L21.7667 14L14.7644 3.57143L15.6104 3L23 14Z" fill="#020A0E"/>
+			</svg>
+		</a>
+	</div>
+</section>
+
+{% endblock %}

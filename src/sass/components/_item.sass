@@ -1,0 +1,159 @@
+.item
+	padding: 40px 0 140px
+	.container
+		@include flexbox
+		align-items: flex-start
+		gap: 40px
+	&-gallery
+		&__thumbnails
+			position: sticky
+			top: calc(92px + 40px)
+			width: 120px
+			@include flexbox
+			flex-direction: column
+			align-items: flex-start
+			gap: 12px
+			li
+				opacity: 0.3
+				transition: var(--transition-ms)
+				&.active
+					opacity: 1
+				img
+					width: 100%
+					height: 160px
+					object-fit: cover
+					object-position: center
+		&__full
+			width: 38%
+			@include flexbox
+			flex-direction: column
+			align-items: flex-start
+			gap: 40px
+			img
+				width: 100%
+				max-width: initial
+				height: calc(100vh - 92px)
+				object-fit: cover
+				object-position: center
+	&-info
+		position: sticky
+		top: calc(92px + 40px)
+		max-width: calc(100% - 120px - 38% - 40px - 40px)
+		width: 980px
+		padding-right: 80px
+		&__favorite
+			position: absolute
+			z-index: 10
+			top: 0
+			right: 0
+			svg
+				display: block
+				width: 40px
+				height: 40px
+				cursor: pointer
+				path
+					stroke: var(--color-black)
+					fill: transparent
+					transition: var(--transition-ms)
+			&:hover
+				svg
+					path
+						stroke: var(--color-dark-red)
+			&.liked
+				svg
+					path
+						stroke: var(--color-dark-red)
+						fill: var(--color-dark-red)
+		&__title
+			font-size: 64px
+			line-height: 0.9
+			font-family: 'Lithium'
+			font-weight: 400
+		&__badges
+			@include flexbox
+			align-items: flex-start
+			gap: 12px
+			margin-top: 12px
+			li
+				font-size: 14px
+				line-height: 1
+				padding: 4px 8px
+				background: var(--color-dark-red)
+				color: var(--color-white)
+				&.new
+					background: var(--color-white)
+					color: var(--color-blue-gray)
+		&__text
+			margin-top: 40px
+			line-height: 1.3
+		&__price
+			margin-top: 80px
+			font-size: 64px
+			line-height: 0.9
+			font-family: 'Lithium'
+			@include flexbox
+			align-items: flex-start
+			gap: 20px
+			&::after
+				content: ''
+				display: block
+				width: 29px
+				height: 44px
+				background-image: url("data:image/svg+xml,%3Csvg width='15' height='23' viewBox='0 0 15 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.51069 13.5877C11.8165 13.6545 15 10.9249 15 6.61197C15 2.56637 11.8165 -0.0655834 6.51069 0.00124352H0V0.361081C1.6636 0.366222 3.32719 0.0989136 3.32719 1.8467V13.0736L0 13.089V13.6031H3.32719V15.3303H0V15.8547H3.32719V21.1597C3.32719 22.7378 1.6636 22.5425 0 22.6402V23H8.77119V22.6402C7.17944 22.5425 5.30582 22.7378 5.30582 21.1597V15.8495H9.21334V15.32L5.30582 15.3303V13.598H6.51069V13.5877ZM5.30582 0.561562H6.11828C11.3522 0.561562 13.1209 3.94917 13.1209 6.81245C13.1209 9.9379 11.3522 13.0633 6.11828 13.0633H5.30582V0.561562Z' fill='%23020A0E'/%3E%3C/svg%3E%0A")
+				background-size: cover
+		&__sizes
+			@include flexbox
+			align-items: center
+			gap: 12px
+			margin-top: 20px
+			&-item
+				input
+					@include visually-hidden
+					&:checked + span
+						color: var(--color-white)
+						background: var(--color-black)
+						border-color: var(--color-black)
+				span
+					@include flexbox
+					align-items: center
+					justify-content: center
+					text-align: center
+					padding: 0 4px
+					min-width: 40px
+					height: 40px
+					border: 1px solid var(--color-black)
+					cursor: pointer
+					transition: var(--transition-ms)
+				&:hover
+					span
+						color: var(--color-ice-blue)
+						border-color: var(--color-ice-blue)
+			&-link
+				margin-left: 28px
+				color: var(--color-blue-gray)
+				line-height: var(--line-height)
+				transition: var(--transition-ms)
+				&:hover
+					color: var(--color-ice-blue)
+		&__cart
+			@include flexbox
+			align-items: center
+			justify-content: center
+			margin-top: 80px
+			width: 250px
+			padding: 20px
+			box-shadow: inset 0 0 0 1px var(--color-black)
+			color: var(--color-black)
+			transition: var(--transition-ms)
+			line-height: var(--line-height)
+			gap: 12px
+			svg
+				path
+					fill: var(--color-black)
+					transition: var(--transition-ms)
+			&:hover
+				background: var(--color-black)
+				color: var(--color-white)
+				svg
+					path
+						fill: var(--color-white)

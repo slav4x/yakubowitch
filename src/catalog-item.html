@@ -1,0 +1,79 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Страница товара' %}
+
+{% block content %}
+
+<section class="item">
+	<div class="container">
+		<ul class="item-gallery__thumbnails">
+			<li class="active"><a href="#image-01"><img src="img/catalog-item-01.jpg" alt="" loading="lazy"></a></li>
+			<li><a href="#image-02"><img src="img/catalog-item-02.jpg" alt="" loading="lazy"></a></li>
+			<li><a href="#image-03"><img src="img/catalog-item-03.jpg" alt="" loading="lazy"></a></li>
+		</ul>
+		<div class="item-gallery__full">
+			<img src="img/catalog-item-01.jpg" alt="" loading="lazy" id="image-01">
+			<img src="img/catalog-item-02.jpg" alt="" loading="lazy" id="image-02">
+			<img src="img/catalog-item-03.jpg" alt="" loading="lazy" id="image-03">
+		</div>
+		<div class="item-info">
+			<div class="item-info__favorite">
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M10.7988 3.5L13.6543 6.23047L14 6.56152L14.3457 6.23047L17.2012 3.5H21.7051L26.3789 11.9131L14 24.293L1.62012 11.9131L6.29492 3.5H10.7988Z" />
+				</svg>
+			</div>
+			<h2 class="item-info__title">Платье Wednesday</h2>
+			<ul class="item-info__badges">
+				<li class="new">Новинка</li>
+				<li>Доступно на заказ</li>
+			</ul>
+			<div class="item-info__text">Платье из шелкового бархата покоряет своим изысканным дизайном. Кружевной воротник и манжеты ручной работы придают утонченный шарм, воссоздавая образ невинной и чистой девушки из закрытой школы. А-силуэт с защипами на талии подчеркивает фигуру, а рукава-фонарики завершают изящный образ. Платье источает ауру безупречности и следования всем правилам приличия, что делает его идеальным выбором для настоящих леди, ценящих элегантность и чистоту стиля.</div>
+			<div class="item-info__price">118 800</div>
+			<div class="item-info__sizes">
+				<label class="item-info__sizes-item">
+					<input type="radio" name="size" value="XS" required>
+					<span>XS</span>
+				</label>
+				<label class="item-info__sizes-item">
+					<input type="radio" name="size" value="S" required>
+					<span>S</span>
+				</label>
+				<label class="item-info__sizes-item">
+					<input type="radio" name="size" value="M" required>
+					<span>M</span>
+				</label>
+				<label class="item-info__sizes-item">
+					<input type="radio" name="size" value="L" required>
+					<span>L</span>
+				</label>
+				<a href="javascript:;" class="item-info__sizes-link js-header-drawer" data-drawer="sizes">Таблица размеров</a>
+			</div>
+			<a href="#" class="item-info__cart">
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M20.18 9L18 3H10L7.82 9H2V25H26V9H20.18ZM10.7 4H17.3L19.12 9H8.88L10.7 4ZM25 22.25V24H3V10H25V22.25Z" />
+				</svg>
+				<span>В корзину </span>
+			</a>
+		</div>
+	</div>
+</section>
+
+<section class="catalog">
+	<div class="container">
+		<h2 class="catalog-title">Другие платья</h2>
+		<div class="catalog-grid">
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+			{% include 'components/catalog-item.html' %}
+		</div>
+	</div>
+</section>
+
+{% endblock %}

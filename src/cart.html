@@ -1,0 +1,76 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Корзина' %}
+
+{% block content %}
+
+<section class="cart">
+	<div class="container">
+		<div class="cart-order">
+			<div class="title">Ваш заказ</div>
+			{% include 'components/cart-item.html' %}
+			{% include 'components/cart-item.html' %}
+			{% include 'components/cart-item.html' %}
+		</div>
+		<div class="cart-sidebar">
+			<div class="cart-sidebar__group">
+				<div class="title">Доставка</div>
+				<div class="cart-sidebar__labels">
+					<p>Доставка:</p>
+					<label class="cart-sidebar__label">
+						<input type="radio" name="delivery" value="Самовывоз" checked>
+						<span>Самовывоз</span>
+					</label>
+					<label class="cart-sidebar__label">
+						<input type="radio" name="delivery" value="В пределах МКАД">
+						<span>В пределах МКАД</span>
+					</label>
+					<label class="cart-sidebar__label">
+						<input type="radio" name="delivery" value="По России">
+						<span>По России</span>
+					</label>
+				</div>
+				<input type="text" name="address" placeholder="Адрес доставки" class="cart-sidebar__input">
+			</div>
+			<div class="cart-sidebar__group">
+				<div class="title">Контакты</div>
+				<input type="text" name="name" placeholder="Имя Фамилия" class="cart-sidebar__input">
+				<input type="email" name="email" placeholder="E-mail" class="cart-sidebar__input">
+				<input type="tel" name="phone" placeholder="Номер телефона" class="cart-sidebar__input masked">
+			</div>
+			<div class="cart-sidebar__group">
+				<div class="title">Сумма заказа</div>
+				<div class="cart-sidebar__subtotal">
+					<span>Стоимость заказа</span>
+					<b>280 750</b>
+					<b>252 675</b>
+				</div>
+				<div class="cart-sidebar__subtotal">
+					<span>Стоимость доставки</span>
+					<b>1 500</b>
+				</div>
+				<div class="cart-sidebar__labels">
+					<p>Способ оплаты:</p>
+					<label class="cart-sidebar__label">
+						<input type="radio" name="payment" value="Банковской картой">
+						<span>Банковской картой</span>
+					</label>
+					<label class="cart-sidebar__label">
+						<input type="radio" name="payment" value="При получении" checked>
+						<span>При получении</span>
+					</label>
+				</div>
+				<label class="cart-sidebar__promocode">
+					<span>Промокод:</span>
+					<input type="text" name="code">
+				</label>
+			</div>
+			<div class="title cart-sidebar__total">
+				<span>Итого:</span>
+				<b>254 175</b>
+			</div>
+			<button class="cart-sidebar__btn">Оформить заказ</button>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

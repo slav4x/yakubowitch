@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const maskOptions = {
+    mask: '+7 (000) 000-00-00',
+    onFocus() {
+      if (this.value === '') this.value = '+7 ';
+    },
+    onBlur() {
+      if (this.value === '+7 ') this.value = '';
+    },
+  };
+
+  document.querySelectorAll('.masked').forEach((item) => new IMask(item, maskOptions));
+
   const header = document.querySelector('.header');
   const headerCatalogLink = header.querySelector('.js-header-catalog');
   const headerCatalogContainer = header.querySelector('.header-catalog');

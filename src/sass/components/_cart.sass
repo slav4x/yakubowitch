@@ -1,0 +1,186 @@
+.cart
+	padding: 60px 0 200px
+	.container
+		max-width: 2150px
+		@include flexbox
+		align-items: flex-start
+	&-order
+		max-width: 840px
+		width: 100%
+		.title
+			margin-bottom: 40px
+		&__item
+			@include flexbox
+			gap: 20px
+			position: relative
+			margin-bottom: 60px
+			padding-right: 28px
+			&:last-child
+				margin-bottom: 0
+			&-image
+				width: 360px
+				height: 490px
+				object-fit: cover
+				object-position: center
+			&-info
+				width: calc(100% - 360px - 20px)
+				@include flexbox
+				flex-direction: column
+				align-items: flex-start
+			&-title
+				font-size: 36px
+				line-height: 0.9
+				font-family: 'Lithium'
+			&-size
+				margin-top: 12px
+				line-height: var(--line-height)
+			&-price
+				font-size: 36px
+				line-height: 0.9
+				font-family: 'Lithium'
+				@include flexbox
+				align-items: flex-start
+				gap: 12px
+				margin-top: auto
+				&::after
+					content: ''
+					display: block
+					width: 15px
+					height: 25px
+					background-image: url("data:image/svg+xml,%3Csvg width='15' height='25' viewBox='0 0 15 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.51069 14.7692C11.8165 14.8419 15 11.8749 15 7.18693C15 2.78953 11.8165 -0.0712863 6.51069 0.00135165H0V0.392479C1.6636 0.398067 3.32719 0.107515 3.32719 2.00728V14.2105L0 14.2272V14.786H3.32719V16.6634H0V17.2333H3.32719V22.9997C3.32719 24.715 1.6636 24.5027 0 24.6089V25H8.77119V24.6089C7.17944 24.5027 5.30582 24.715 5.30582 22.9997V17.2277H9.21334V16.6522L5.30582 16.6634V14.7804H6.51069V14.7692ZM5.30582 0.610393H6.11828C11.3522 0.610393 13.1209 4.29258 13.1209 7.40484C13.1209 10.8021 11.3522 14.1993 6.11828 14.1993H5.30582V0.610393Z' fill='%23020A0E'/%3E%3C/svg%3E%0A")
+			&-delete
+				position: absolute
+				top: 0
+				right: 0
+				width: 28px
+				height: 28px
+				cursor: pointer
+				background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.2784 23L13.9949 14.7165L5.72163 23L5 22.2784L13.2835 13.9949L5 5.72163L5.72163 5L13.9949 13.2835L22.2784 5L23 5.72163L14.7165 13.9949L23 22.2784L22.2784 23Z' fill='%23020A0E'/%3E%3C/svg%3E%0A")
+				transition: var(--transition-ms)
+				&:hover
+					opacity: 0.6
+	&-sidebar
+		@include flexbox
+		align-items: flex-start
+		flex-direction: column
+		gap: 60px
+		max-width: 570px
+		width: 100%
+		margin-left: auto
+		margin-right: 200px
+		&__group
+			width: 100%
+			@include flexbox
+			flex-direction: column
+			align-items: flex-start
+			gap: 20px
+		&__labels
+			@include flexbox
+			align-items: flex-start
+			gap: 12px
+			p
+				line-height: var(--line-height)
+				padding: 1px 0
+		&__label
+			display: block
+			input
+				@include visually-hidden
+				&:checked + span
+					color: var(--color-black)
+					border-color: var(--color-black)
+			span
+				line-height: var(--line-height)
+				padding-top: 1px
+				border-bottom: 1px solid transparent
+				color: var(--color-blue-gray)
+				cursor: pointer
+				display: block
+				transition: var(--transition-ms)
+			&:hover
+				span
+					color: var(--color-ice-blue)
+		&__input
+			width: 100%
+			// height: 40px
+			padding: 0 0 8px
+			border: 0
+			border-bottom: 1px solid var(--color-blue-gray)
+			font-weight: 300
+			@include placeholder
+				color: var(--color-blue-gray)
+		&__promocode
+			width: 100%
+			border-bottom: 1px solid var(--color-blue-gray)
+			@include flexbox
+			align-items: flex-start
+			gap: 8px
+			cursor: pointer
+			input
+				flex: 1
+				padding: 0 0 8px
+				bottom: 0
+				font-weight: 300
+				color: var(--color-blue-gray)
+		&__subtotal
+			@include flexbox
+			align-items: flex-start
+			gap: 12px 26px
+			span
+				width: 100%
+				display: block
+				line-height: var(--line-height)
+			b
+				font-size: 36px
+				font-weight: 400
+				font-family: 'Lithium'
+				line-height: 0.9
+				@include flexbox
+				align-items: flex-start
+				gap: 12px
+				opacity: 0.2
+				&::after
+					content: ''
+					display: block
+					width: 15px
+					height: 25px
+					background-image: url("data:image/svg+xml,%3Csvg width='15' height='25' viewBox='0 0 15 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.51069 14.7692C11.8165 14.8419 15 11.8749 15 7.18693C15 2.78953 11.8165 -0.0712863 6.51069 0.00135165H0V0.392479C1.6636 0.398067 3.32719 0.107515 3.32719 2.00728V14.2105L0 14.2272V14.786H3.32719V16.6634H0V17.2333H3.32719V22.9997C3.32719 24.715 1.6636 24.5027 0 24.6089V25H8.77119V24.6089C7.17944 24.5027 5.30582 24.715 5.30582 22.9997V17.2277H9.21334V16.6522L5.30582 16.6634V14.7804H6.51069V14.7692ZM5.30582 0.610393H6.11828C11.3522 0.610393 13.1209 4.29258 13.1209 7.40484C13.1209 10.8021 11.3522 14.1993 6.11828 14.1993H5.30582V0.610393Z' fill='%23020A0E'/%3E%3C/svg%3E%0A")
+				&:last-child
+					opacity: 1
+		&__total
+			@include flexbox
+			align-items: flex-start
+			gap: 28px
+			b
+				font-weight: 400
+				@include flexbox
+				align-items: flex-start
+				gap: 12px
+				&::after
+					content: ''
+					display: block
+					width: 28px
+					height: 45px
+					background-image: url("data:image/svg+xml,%3Csvg width='28' height='45' viewBox='0 0 28 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.1533 26.5846C22.0575 26.7153 28 21.3748 28 12.9365C28 5.02116 22.0575 -0.128315 12.1533 0.00243298H0V0.706463C3.10538 0.71652 6.21076 0.193527 6.21076 3.6131V25.5788L0 25.609V26.6148H6.21076V29.9941H0V31.02H6.21076V41.3994C6.21076 44.4871 3.10538 44.1049 0 44.296V45H16.3729V44.296C13.4016 44.1049 9.9042 44.4871 9.9042 41.3994V31.0099H17.1982V29.974L9.9042 29.9941V26.6047H12.1533V26.5846ZM9.9042 1.09871H11.4208C21.1909 1.09871 24.4923 7.72665 24.4923 13.3287C24.4923 19.4437 21.1909 25.5587 11.4208 25.5587H9.9042V1.09871Z' fill='%23020A0E'/%3E%3C/svg%3E%0A")
+		&__btn
+			@include flexbox
+			align-items: center
+			justify-content: center
+			width: 100%
+			padding: 20px
+			box-shadow: inset 0 0 0 1px var(--color-black)
+			color: var(--color-black)
+			transition: var(--transition-ms)
+			line-height: var(--line-height)
+			gap: 12px
+			background: transparent
+			font-weight: 300
+			svg
+				path
+					fill: var(--color-black)
+					transition: var(--transition-ms)
+			&:hover
+				background: var(--color-black)
+				color: var(--color-white)
+				svg
+					path
+						fill: var(--color-white)

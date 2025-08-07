@@ -1,0 +1,85 @@
+.shipping
+	padding: 60px 0 200px
+	.container
+		max-width: 1720px
+		@include flexbox
+		align-items: flex-start
+		justify-content: space-between
+		gap: 100px
+	&-group
+		max-width: 770px
+		width: 100%
+		@include flexbox
+		flex-direction: column
+		align-items: flex-start
+		gap: 40px
+		&-sm
+			max-width: 570px
+		&__head
+			@include flexbox
+			flex-direction: column
+			align-items: flex-start
+			gap: 20px
+			width: 100%
+	&-desc
+		line-height: var(--line-height)
+	&-delivery
+		@include flexbox
+		align-items: flex-start
+		gap: 40px
+		&__item
+			width: calc(100% / 2 - 20px)
+			@include flexbox
+			flex-direction: column
+			align-items: flex-start
+			gap: 20px
+		&__text
+			line-height: var(--line-height)
+		&__price
+			@include flexbox
+			align-items: flex-start
+			gap: 28px
+			li
+				p
+					line-height: var(--line-height)
+				span
+					display: block
+					margin-top: 4px
+					font-size: 14px
+					line-height: 1.3
+					color: var(--color-gray-40)
+	&-exchange
+		@include flexbox
+		flex-direction: column
+		align-items: flex-start
+		gap: 20px
+		ul
+			line-height: var(--line-height)
+			li
+				position: relative
+				padding-left: 30px
+				&::before
+					content: '•'
+					position: absolute
+					top: 0
+					left: 12px
+			span
+				text-decoration: underline
+	&-contacts
+		@include flexbox
+		flex-direction: column
+		align-items: flex-start
+		gap: 16px
+		&__item
+			p
+				line-height: var(--line-height)
+				a
+					transition: var(--transition-ms)
+					&:hover
+						color: var(--color-ice-blue)
+			span
+				display: block
+				font-size: 14px
+				line-height: 1.3
+				color: var(--color-gray-40)
+				margin-top: 4px

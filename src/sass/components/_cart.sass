@@ -60,6 +60,8 @@
 				&:hover
 					opacity: 0.6
 	&-sidebar
+		position: sticky
+		top: calc(var(--header-height) + 60px)
 		@include flexbox
 		align-items: flex-start
 		flex-direction: column

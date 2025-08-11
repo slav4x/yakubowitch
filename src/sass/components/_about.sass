@@ -33,9 +33,12 @@
 
 	&-collections
 		padding-bottom: 200px
+		&:first-of-type
+			padding-top: 60px
 		.title
 			max-width: 1380px
 		&__grid
+			width: 100%
 			margin-top: 60px
 			@include flexbox
 			align-items: flex-start
@@ -73,6 +76,11 @@
 				aspect-ratio: 1
 			&-sm
 				aspect-ratio: 1.75
+			&-auto
+				aspect-ratio: initial
+				padding: 0
+				img
+					position: relative
 			&:hover img
 				transform: scale(1.024)
 

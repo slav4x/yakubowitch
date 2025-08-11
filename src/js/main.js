@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const thumbnails = document.querySelectorAll('.item-gallery__thumbnails li');
   const fullImages = document.querySelectorAll('.item-gallery__full img');
-  const offset = 92;
+  let offset = window.innerWidth <= 1024 ? 60 : window.innerWidth <= 1600 ? 76 : 92;
 
   let ticking = false;
 

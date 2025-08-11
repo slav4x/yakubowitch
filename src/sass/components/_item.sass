@@ -1,13 +1,13 @@
 .item
-	padding: 40px 0 140px
+	padding: var(--spacing-xs) 0 140px
 	.container
 		@include flexbox
 		align-items: flex-start
-		gap: 40px
+		gap: var(--spacing-xs)
 	&-gallery
 		&__thumbnails
 			position: sticky
-			top: calc(var(--header-height) + 40px)
+			top: calc(var(--header-height) + var(--spacing-xs))
 			width: 120px
 			@include flexbox
 			flex-direction: column
@@ -28,7 +28,7 @@
 			@include flexbox
 			flex-direction: column
 			align-items: flex-start
-			gap: 40px
+			gap: var(--spacing-xs)
 			img
 				width: 100%
 				max-width: initial
@@ -37,8 +37,8 @@
 				object-position: center
 	&-info
 		position: sticky
-		top: calc(var(--header-height) + 40px)
-		max-width: calc(100% - 120px - 38% - 40px - 40px)
+		top: calc(var(--header-height) + var(--spacing-xs))
+		max-width: calc(100% - 120px - 38% - var(--spacing-xs) - var(--spacing-xs))
 		width: 980px
 		padding-right: 80px
 		&__favorite
@@ -79,7 +79,7 @@
 					background: var(--color-white)
 					color: var(--color-blue-gray)
 		&__text
-			margin-top: 40px
+			margin-top: var(--spacing-xs)
 			line-height: 1.3
 		&__price
 			margin-top: 80px
@@ -127,25 +127,6 @@
 				transition: var(--transition-ms)
 				&:hover
 					color: var(--color-ice-blue)
-		&__cart
-			@include flexbox
-			align-items: center
-			justify-content: center
+		.btn
 			margin-top: 80px
 			width: 250px
-			padding: 20px
-			box-shadow: inset 0 0 0 1px var(--color-black)
-			color: var(--color-black)
-			transition: var(--transition-ms)
-			line-height: var(--line-height)
-			gap: 12px
-			svg
-				path
-					fill: var(--color-black)
-					transition: var(--transition-ms)
-			&:hover
-				background: var(--color-black)
-				color: var(--color-white)
-				svg
-					path
-						fill: var(--color-white)

@@ -1,5 +1,5 @@
 .cart
-	padding: 60px 0 200px
+	padding: var(--spacing-md) 0 var(--spacing-xl)
 	.container
 		max-width: 2150px
 		@include flexbox
@@ -8,12 +8,12 @@
 		max-width: 840px
 		width: 100%
 		.title
-			margin-bottom: 40px
+			margin-bottom: var(--spacing-xs)
 		&__item
 			@include flexbox
 			gap: 20px
 			position: relative
-			margin-bottom: 60px
+			margin-bottom: var(--spacing-md)
 			padding-right: 28px
 			&:last-child
 				margin-bottom: 0
@@ -61,15 +61,14 @@
 					opacity: 0.6
 	&-sidebar
 		position: sticky
-		top: calc(var(--header-height) + 60px)
+		top: calc(var(--header-height) + var(--spacing-md))
 		@include flexbox
 		align-items: flex-start
 		flex-direction: column
-		gap: 60px
+		gap: var(--spacing-md)
 		max-width: 570px
 		width: 100%
-		margin-left: auto
-		margin-right: 200px
+		margin: 0 auto
 		&__group
 			width: 100%
 			@include flexbox
@@ -103,7 +102,6 @@
 					color: var(--color-ice-blue)
 		&__input
 			width: 100%
-			// height: 40px
 			padding: 0 0 8px
 			border: 0
 			border-bottom: 1px solid var(--color-blue-gray)
@@ -163,26 +161,3 @@
 					width: 28px
 					height: 45px
 					background-image: url("data:image/svg+xml,%3Csvg width='28' height='45' viewBox='0 0 28 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.1533 26.5846C22.0575 26.7153 28 21.3748 28 12.9365C28 5.02116 22.0575 -0.128315 12.1533 0.00243298H0V0.706463C3.10538 0.71652 6.21076 0.193527 6.21076 3.6131V25.5788L0 25.609V26.6148H6.21076V29.9941H0V31.02H6.21076V41.3994C6.21076 44.4871 3.10538 44.1049 0 44.296V45H16.3729V44.296C13.4016 44.1049 9.9042 44.4871 9.9042 41.3994V31.0099H17.1982V29.974L9.9042 29.9941V26.6047H12.1533V26.5846ZM9.9042 1.09871H11.4208C21.1909 1.09871 24.4923 7.72665 24.4923 13.3287C24.4923 19.4437 21.1909 25.5587 11.4208 25.5587H9.9042V1.09871Z' fill='%23020A0E'/%3E%3C/svg%3E%0A")
-		&__btn
-			@include flexbox
-			align-items: center
-			justify-content: center
-			width: 100%
-			padding: 20px
-			box-shadow: inset 0 0 0 1px var(--color-black)
-			color: var(--color-black)
-			transition: var(--transition-ms)
-			line-height: var(--line-height)
-			gap: 12px
-			background: transparent
-			font-weight: 300
-			svg
-				path
-					fill: var(--color-black)
-					transition: var(--transition-ms)
-			&:hover
-				background: var(--color-black)
-				color: var(--color-white)
-				svg
-					path
-						fill: var(--color-white)

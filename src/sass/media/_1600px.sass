@@ -17,6 +17,12 @@
 		&-sm
 			font-size: 26px
 
+	.btn
+		padding: 16px 40px
+		svg
+			width: 24px
+			height: 24px
+
 	.header
 		&-main
 			padding: 14px 0
@@ -46,6 +52,10 @@
 		&-catalog
 			.container
 				gap: 60px
+			&__more
+				svg
+					width: 24px
+					height: 24px
 		&-drawer
 			padding: 32px
 			&__close
@@ -125,8 +135,9 @@
 					width: 23px
 					height: 36px
 					background-repeat: no-repeat
-			&__cart
+			.btn
 				margin-top: 40px
+				width: 210px
 			&__sizes
 				&-item
 					span
@@ -170,3 +181,9 @@
 		&-sidebar
 			max-width: 420px
 			margin-right: 0
+			&__total
+				b::after
+					background-size: contain
+					width: 23px
+					height: 36px
+					background-repeat: no-repeat

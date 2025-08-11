@@ -1,5 +1,5 @@
 .shipping
-	padding: 60px 0 200px
+	padding: var(--spacing-md) 0 var(--spacing-xl)
 	.container
 		max-width: 1720px
 		@include flexbox
@@ -12,7 +12,7 @@
 		@include flexbox
 		flex-direction: column
 		align-items: flex-start
-		gap: 40px
+		gap: var(--spacing-xs)
 		&-sm
 			max-width: 570px
 		&__head
@@ -26,7 +26,7 @@
 	&-delivery
 		@include flexbox
 		align-items: flex-start
-		gap: 40px
+		gap: var(--spacing-xs)
 		&__item
 			width: calc(100% / 2 - 20px)
 			@include flexbox

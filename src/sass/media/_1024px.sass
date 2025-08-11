@@ -1,1 +1,155 @@
 @media (max-width: 1024px)
+	:root
+		--header-height: 60px
+
+	.container
+		padding: 0 20px
+
+	.header
+		&-main
+			padding: 18px 0
+		&-burger
+			@include flexbox
+			flex-direction: column
+			align-items: center
+			justify-content: center
+			width: 24px
+			height: 24px
+			gap: 4px
+			span
+				width: 18px
+				height: 1px
+				background: var(--color-black)
+		&-menu
+			display: none
+		&-logo
+			flex: initial
+			img
+				height: 12px
+		&-nav
+			margin: 0
+			flex: initial
+			li
+				a
+					padding: 0
+			&__favorite
+				display: none
+			&__cart
+				top: -4px
+				right: -4px
+
+	.footer
+		&-banner
+			width: 100%
+			order: -1
+			height: 100svh
+			align-items: flex-start
+			justify-content: flex-end
+			padding: 20px 20px var(--spacing-xl)
+			gap: var(--spacing-xs)
+		&-content
+			gap: 0
+		&-menu
+			flex-direction: column
+			align-items: center
+			gap: 12px
+			padding: 32px 0
+			border-bottom: 1px solid var(--color-ice-blue)
+			position: relative
+			&::after
+				content: ''
+				height: 7px
+				position: absolute
+				bottom: -4px
+				left: 0
+				right: 0
+				background: url("data:image/svg+xml,%3Csvg width='5' height='7' viewBox='0 0 5 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0L5 3V4L0 7V0Z' fill='%23C2D3DC'/%3E%3C/svg%3E%0A") no-repeat left center, url("data:image/svg+xml,%3Csvg width='5' height='7' viewBox='0 0 5 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7L2.62268e-07 4L3.49691e-07 3L5 0L5 7Z' fill='%23C2D3DC'/%3E%3C/svg%3E%0A") no-repeat right center
+			&:first-child
+				border-top: 1px solid var(--color-ice-blue)
+				&::before
+					content: ''
+					height: 7px
+					position: absolute
+					top: -4px
+					left: 0
+					right: 0
+					background: url("data:image/svg+xml,%3Csvg width='5' height='7' viewBox='0 0 5 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0L5 3V4L0 7V0Z' fill='%23C2D3DC'/%3E%3C/svg%3E%0A") no-repeat left center, url("data:image/svg+xml,%3Csvg width='5' height='7' viewBox='0 0 5 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7L2.62268e-07 4L3.49691e-07 3L5 0L5 7Z' fill='%23C2D3DC'/%3E%3C/svg%3E%0A") no-repeat right center
+			&__title
+				text-align: center
+			&__nav
+				align-items: center
+		&-social
+			margin-top: 40px
+		&-bottom
+			padding: 0 0 20px
+			.container
+				gap: 4px
+			&__logo
+				display: none
+			&__info
+				flex: initial
+				width: 100%
+				flex-direction: column
+				align-items: flex-start
+				gap: 4px
+
+	.item
+		&-info
+			top: 0
+			width: 100%
+			max-width: 100%
+			position: relative
+		&-gallery
+			&__thumbnails,
+			&__full
+				display: none
+
+	.shipping
+		.container
+			gap: 60px
+			flex-direction: column
+		&-group
+			&-sm
+				order: 2
+
+	.about
+		&-big
+			display: none
+		&-content
+			width: 100%
+			img
+				display: none
+		&-collections
+			&__grid
+				margin-bottom: -30px
+			&__item
+				width: calc((100% - 30px) / 2)
+				margin-bottom: 30px
+				padding: 20px
+				.title
+					font-size: 42px
+				&-auto
+					padding: 0
+		&-celebrity
+			&__grid
+				overflow: auto
+				padding: 0 20px
+				margin-left: -20px
+				margin-right: -20px
+				grid-auto-flow: column
+				grid-template-columns: minmax(320px, 1fr)
+				gap: 20px
+				&::-webkit-scrollbar
+					display: none
+			&__item
+				width: 320px
+
+	.cart
+		&-order,
+		&-sidebar
+			width: 100%
+			max-width: 100%
+		&-sidebar
+			margin-top: 60px
+			position: relative
+			top: 0

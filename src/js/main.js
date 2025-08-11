@@ -156,4 +156,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', onScroll);
+
+  const collectionsGrid = document.querySelector('.about-collections__grid');
+  if (collectionsGrid && window.innerWidth >= 768) {
+    setTimeout(() => {
+      const collectionsGridMasonry = new Masonry(collectionsGrid, {
+        itemSelector: '.about-collections__item',
+        transitionDuration: 0,
+        gutter: window.innerWidth <= 1024 ? 30 : 40,
+      });
+    }, 100);
+  }
 });

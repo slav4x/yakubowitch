@@ -80,7 +80,12 @@ export function js() {
 }
 
 export function libsJs() {
-  return src(['src/js/vendor/fancybox.umd.js', 'src/js/vendor/splide.min.js', 'src/js/vendor/imask.min.js'])
+  return src([
+    'src/js/vendor/fancybox.umd.js',
+    'src/js/vendor/splide.min.js',
+    'src/js/vendor/imask.min.js',
+    'src/js/vendor/minimasonry.min.js',
+  ])
     .pipe(gulpIf(isProd, terser()))
     .pipe(concat(isProd ? 'libs.min.js' : 'libs.js'))
     .pipe(dest('app/js'));

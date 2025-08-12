@@ -41,34 +41,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const drawerTriggers = document.querySelectorAll('.js-header-drawer');
   const drawers = document.querySelectorAll('.header-drawer');
 
+  const openStack = [];
+
+  const openDrawer = (drawer) => {
+    if (!drawer) return;
+    drawer.classList.add('show');
+    const i = openStack.indexOf(drawer);
+    if (i !== -1) openStack.splice(i, 1);
+    openStack.push(drawer);
+  };
+
+  const closeLast = () => {
+    const last = openStack.pop();
+    if (last) last.classList.remove('show');
+  };
+
+  const isClickInsideAnyOpen = (target) => {
+    return openStack.some((d) => d.contains(target));
+  };
+
   drawerTriggers.forEach((trigger) => {
     trigger.addEventListener('click', (e) => {
       e.stopPropagation();
       const drawerName = trigger.dataset.drawer;
       const drawer = document.querySelector(`.header-drawer[data-drawer="${drawerName}"]`);
-
-      if (drawer) {
-        drawer.classList.add('show');
-      }
+      openDrawer(drawer);
     });
   });
 
   document.addEventListener('click', (e) => {
-    drawers.forEach((drawer) => {
-      if (drawer.classList.contains('show') && !drawer.contains(e.target)) {
-        drawer.classList.remove('show');
-      }
-    });
+    if (openStack.length === 0) return;
+    if (isClickInsideAnyOpen(e.target)) return;
+    closeLast();
   });
 
   drawers.forEach((drawer) => {
     const closeBtn = drawer.querySelector('.header-drawer__close');
     if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        drawer.classList.remove('show');
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeLast();
       });
     }
   });
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach(({ target }) => {
+      if (target.classList && !target.classList.contains('show')) {
+        const i = openStack.indexOf(target);
+        if (i !== -1) openStack.splice(i, 1);
+      }
+    });
+  });
+  drawers.forEach((d) => observer.observe(d, { attributes: true, attributeFilter: ['class'] }));
 
   document.querySelectorAll('.catalog-card').forEach((card) => {
     const pic = card.querySelector('.catalog-card__pic');

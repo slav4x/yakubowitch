@@ -207,6 +207,7 @@
 				gap: 4px
 
 	.item
+		overflow: hidden
 		.container
 			gap: 40px
 		&-info
@@ -224,15 +225,19 @@
 				display: none
 		&-carousel
 			display: block
+			width: 100%
 			&__main
 				width: 100%
 				aspect-ratio: 320 / 420
 			&__thumbnails
+				width: 100%
 				margin-top: 12px
+				.splide__track
+					overflow: initial
 				.splide__slide
 					border: 0 !important
 					opacity: 0.3
-					transition: var(--transition-ms)
+					transition: opacity var(--transition-ms)
 					&.is-active
 						opacity: 1
 			img

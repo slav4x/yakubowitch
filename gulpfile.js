@@ -84,7 +84,7 @@ export function libsJs() {
     'src/js/vendor/fancybox.umd.js',
     'src/js/vendor/splide.min.js',
     'src/js/vendor/imask.min.js',
-    'src/js/vendor/minimasonry.min.js',
+    'src/js/vendor/masonry.pkgd.min.js',
   ])
     .pipe(gulpIf(isProd, terser()))
     .pipe(concat(isProd ? 'libs.min.js' : 'libs.js'))

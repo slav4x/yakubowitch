@@ -192,4 +192,25 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, 100);
   }
+
+  var main = new Splide('.item-carousel__main', {
+    type: 'fade',
+    rewind: true,
+    pagination: false,
+    arrows: false,
+  });
+
+  var thumbnail = new Splide('.item-carousel__thumbnails', {
+    fixedWidth: 72,
+    fixedHeight: 100,
+    gap: 12,
+    rewind: true,
+    pagination: false,
+    isNavigation: true,
+    arrows: false,
+  });
+
+  main.sync(thumbnail);
+  main.mount();
+  thumbnail.mount();
 });

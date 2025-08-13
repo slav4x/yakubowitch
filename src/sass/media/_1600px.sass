@@ -148,8 +148,14 @@
 			height: 320px
 
 	.shipping
-		&-group
-			max-width: 570px
+		.container
+			gap: 40px
+		&-col
+			&:first-child
+				max-width: 570px
+			&:nth-child(2)
+				max-width: 420px
+				width: calc(100% - 570px - 40px)
 
 	.about
 		&-celebrity

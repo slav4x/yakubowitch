@@ -64,14 +64,22 @@
 			align-items: center
 			justify-content: space-between
 		&__info
-			flex: 1
 			@include flexbox
 			align-items: center
-			gap: 20px
+			gap: 12px
 			font-size: 16px
 			line-height: 24px
-			&.right
-				justify-content: flex-end
+			a
+				transition: var(--transition-ms)
+				&:hover
+					color: var(--color-ice-blue)
+		&__author
+			font-size: 16px
+			line-height: 24px
+			color: var(--color-blue-gray)
+			transition: var(--transition-ms)
+			&:hover
+				color: var(--color-ice-blue)
 	&-social
 		&__links
 			@include flexbox
